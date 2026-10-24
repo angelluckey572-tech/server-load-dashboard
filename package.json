@@ -1,0 +1,13 @@
+{
+  "name": "server-load-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time server load monitoring dashboard for observing traffic and performance under stress",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

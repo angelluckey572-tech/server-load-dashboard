@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Load Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <p class="eyebrow">System Monitor</p>
+          <h1>Server Load Dashboard</h1>
+        </div>
+        <div class="live-badge">Live</div>
+      </header>
+
+      <main>
+        <section class="stats-grid">
+          <article class="card">
+            <div class="label">Total Requests</div>
+            <div id="totalRequests" class="value">0</div>
+          </article>
+          <article class="card">
+            <div class="label">Requests / Sec</div>
+            <div id="rps" class="value">0</div>
+          </article>
+          <article class="card">
+            <div class="label">Avg Latency</div>
+            <div id="avgLatency" class="value">0 ms</div>
+          </article>
+          <article class="card">
+            <div class="label">Success Rate</div>
+            <div id="successRate" class="value">0%</div>
+          </article>
+          <article class="card">
+            <div class="label">Error Rate</div>
+            <div id="errorRate" class="value">0%</div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="card chart-card">
+            <div class="section-header">
+              <h2>Traffic Overview</h2>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="trafficChart"></canvas>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-header">
+              <h2>System Health</h2>
+            </div>
+            <div class="metrics-list">
+              <div class="metric-item">
+                <span>CPU Usage</span>
+                <strong id="cpuUsage">0%</strong>
+              </div>
+              <div class="metric-item">
+                <span>Memory</span>
+                <strong id="memoryUsage">0%</strong>
+              </div>
+              <div class="metric-item">
+                <span>Uptime</span>
+                <strong id="uptime">0s</strong>
+              </div>
+              <div class="metric-item">
+                <span>HTTP 200</span>
+                <strong id="status200">0</strong>
+              </div>
+              <div class="metric-item">
+                <span>HTTP 400</span>
+                <strong id="status400">0</strong>
+              </div>
+              <div class="metric-item">
+                <span>HTTP 500</span>
+                <strong id="status500">0</strong>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="card footer-card">
+          <div class="legend">
+            <span><span class="dot blue"></span> Requests</span>
+            <span><span class="dot green"></span> Success</span>
+            <span><span class="dot red"></span> Errors</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
